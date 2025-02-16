@@ -19,13 +19,19 @@ import {
   SignedOut,
   SignInButton,
   UserButton,
+  RedirectToSignIn,
+  useAuth
 } from "@clerk/clerk-react";
+
+
 
 const settings = ["Logout"];
 
 const Header = () => {
   // const { isLoggedIn } = useSelector((state) => state.auth);
   // console.log(isLoggedIn);
+
+  const {isSignedIn}=useAuth()
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -182,7 +188,7 @@ const Header = () => {
         </div>
       </header>
       {/* <!-- Header Section End --> */}
-      <Outlet />
+      isSignedIn? <Outlet/>:<h3 style={{textAlign:"center",color:"brown"}}>Welcome User, Please Login to Continue</h3>
       <Footer />
     </>
   );
