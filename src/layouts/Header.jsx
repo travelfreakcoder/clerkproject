@@ -188,7 +188,7 @@ const Header = () => {
         </div>
       </header>
       {/* <!-- Header Section End --> */}
-      {isSignedIn? <Outlet/>:<h3 style={{textAlign:"center",color:"brown"}}>Welcome User, Please Login to Continue</h3>}
+      {isSignedIn? <Outlet/>:<div style={{display:"flex",justifyContent:"center",alignItems:"center", height:"600px"}}><h3 style={{color:"brown"}}>Welcome User, Please Login to Continue</h3><div/>}
       <Footer />
     </>
   );
